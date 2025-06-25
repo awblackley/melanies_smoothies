@@ -29,8 +29,8 @@ if time_to_insert:
       for fruit_chosen in ingredients_list:
           ingredients_string += fruit_chosen + ' '
           smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + fruit_chosen)
-          st.write(fruit_chosen)
-          st.text(smoothiefroot_response.json())
+          st.subheader(fruit_chosen + ' Nutrition Information')
+          # st.text(smoothiefroot_response.json())
           sf_df = st.dataframe(data = smoothiefroot_response.json(),use_container_width=True)
      
       my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order) 
