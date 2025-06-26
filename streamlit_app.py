@@ -22,8 +22,7 @@ my_dataframe = session.table("smoothies.public.fruit_options").select(col('fruit
 pd_df = my_dataframe.to_pandas()
 ingredients_list =st.multiselect('Choose up to 5 ingredients',
                                 my_dataframe,
-                                max_selections=5,
-                                place_holder=Choose 5 options)
+                                max_selections=6)
 
 time_to_insert = st.button('Submit Order')
 
